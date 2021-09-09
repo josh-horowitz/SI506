@@ -10,6 +10,8 @@ north_tour = "North Campus Tour"
 #@ArbHiking = "Hiking in the Arb"
 kerry_town = "Kerrytown District Tour "
 
+print('test')
+
 
 # PROBLEM 2 (2 points)
 events = [sonic, central_tour, north_tour, kerry_town]
