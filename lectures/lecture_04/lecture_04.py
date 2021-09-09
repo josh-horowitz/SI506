@@ -20,23 +20,23 @@ print(f"\n1.0 named schools = {named_schools}") # expression
 # 2.0 OBJECT BEHAVIORS (GENTLE INTRO)
 
 umich = 'University of Michigan'
-umich_lowercase = None
+umich_lowercase = umich.lower()
 
 print(f"\n2.0 UMich lowercase = {umich_lowercase}")
 
 umich_twitter = '@UMich @UMichiganNews @UMichResearch @UMSI'
 
-umich_twitter_handles = None
+umich_twitter_handles = umich_twitter.split()
 
 print(f"\n2.0 TWITTER 01 = {umich_twitter_handles}")
 
 umich_twitter = '@UMich,@UMichiganNews,@UMichResearch,@UMSI'
-umich_twitter_handles = None
+umich_twitter_handles = umich_twitter.split(',')
 
 print(f"\n2.0 TWITTER 02 = {umich_twitter_handles}")
 
 umich_twitter = '@UMich, @UMichiganNews, @UMichResearch, @UMSI'
-umich_twitter_handles = None
+umich_twitter_handles = umich_twitter.split(', ')
 
 print(f"\n2.0 TWITTER 03 = {umich_twitter_handles}")
 
@@ -48,21 +48,21 @@ print(f"\n2.0 TWITTER 03 = {umich_twitter_handles}")
 
 # !ticker_symbol = 'GME'
 # ticker-symbol = 'GME'
-# ticker_symbol = 'GME'
+ticker_symbol = 'GME'
 # @ticker_symbol = 'GME'
 # TickerSymbol = 'GME'
 
 # TODO COMMENT AND ADD VARIABLE
-# print(f"\nChallenge 01 = {???}")
+print(f"\nChallenge 01 = {ticker_symbol}")
 
 
 # CHALLENGE 02
 
-obj_type = None
+obj_type = type(ticker_symbol)
 
 print(f"\nChallenge 02 type = {obj_type}")
 
-obj_length = None
+obj_length = len(ticker_symbol)
 
 print(f"\nChallenge 02 length = {obj_length}")
 
@@ -71,7 +71,7 @@ print(f"\nChallenge 02 length = {obj_length}")
 
 string = "GameStop AMC BlackBerry Macy's" # note single quote surrounded by double quotes
 
-companies = None # default delimiter is blank space
+companies = string.split() # default delimiter is blank space
 
 print(f"\nChallenge 03 = {companies}")
 
@@ -80,7 +80,7 @@ print(f"\nChallenge 03 = {companies}")
 
 string = "GameStop, AMC, BlackBerry, Macy's" # note single quote surrounded by double quotes
 
-companies = None
+companies = string.split(", ")
 
 print(f"\nChallenge 04 = {companies}")
 
@@ -89,14 +89,14 @@ print(f"\nChallenge 04 = {companies}")
 
 jan_04_open_price = 17.25 # 4 Jan 2021
 sep_08_close_price = 198.80 # 8 Sep 2021
-percent_change = None
+percent_change = ((sep_08_close_price - jan_04_open_price)/jan_04_open_price)*100
 
 print(f"\nChallenge 05 (ytd return) = {percent_change}")
 
 # Bonus: str.format()
 # Formatting types: see https://www.w3schools.com/python/ref_string_format.asp
 
-percent_change_formatted = None
+percent_change_formatted = str.format(f"{percent_change:.2f}")
 
 print(f"\nChallenge 05 (ytd return formatted) = {percent_change_formatted}")
 
@@ -106,29 +106,31 @@ print(f"\nChallenge 05 (ytd return formatted) = {percent_change_formatted}")
 aug_04_open_price = 146.80
 gamestop_shares = 5
 
-purchase_price = None
+purchase_price = aug_04_open_price * gamestop_shares
 
 print(f"\nChallenge 06 stock purchase price = {purchase_price}")
 
-sell_price = None
+sep_08_close_price = 198.80
+
+sell_price = sep_08_close_price * gamestop_shares
 
 print(f"\nChallenge 06 stock sale price = {sell_price}")
 
-percent_change = None
+percent_change = ((sell_price - purchase_price)/purchase_price) * 100
 
 print(f"\nChallenge 06 percent_change = {percent_change}")
 
-fee = None
+fee = sell_price * .01
 
 print(f"\nChallenge 06 fee = {fee}")
 
-profit = None
+profit = sell_price - fee
 
 print(f"\nChallenge 06 profit = {profit}")
 
 # Bonus: profit formatted
 # See https://www.w3schools.com/python/ref_string_format.asp
-# print(f"\nChallenge 06 profit formatted = ${profit:.2f}") # fixed point number format
+print(f"\nChallenge 06 profit formatted = ${profit:.2f}") # fixed point number format
 
 
 ## CHALLENGE 07
