@@ -1,1 +1,0 @@
-print('I just instlled vs Code.')
