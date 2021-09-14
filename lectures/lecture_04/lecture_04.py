@@ -124,7 +124,7 @@ fee = sell_price * .01
 
 print(f"\nChallenge 06 fee = {fee}")
 
-profit = sell_price - fee
+profit = sell_price - purchase_price - fee
 
 print(f"\nChallenge 06 profit = {profit}")
 
@@ -144,15 +144,15 @@ late October, as the Federal Reserve gave a glum assessment of the economy and b
 big tech companies announced their earnings.
 """
 
-char_count = None
+char_count = len(ny_times)
 
 print(f"\nChallenge 07 (char count) = {char_count}")
 
-chunks = None
-chunk_count = None
+chunks = ny_times.split()
+chunk_count = len(chunks)
 
 print(f"\nChallenge 07 (chunk count) = {chunk_count}")
 
-avg_chunk_size = None
+avg_chunk_size = len(ny_times)//len(chunks)
 
 print(f"\nChallenge 07 (avg chunk size) = {avg_chunk_size}")
