@@ -2,30 +2,30 @@
 
 # 2.1 STRING BASICS
 
-comedy_series = None
+comedy_series = 'Monty Python'
 
 # TODO UNCOMMENT
-# print(f"\n2.1 comedy_series (id={id(comedy_series)}) = {comedy_series}")
+print(f"\n2.1 comedy_series (id={id(comedy_series)}) = {comedy_series}")
 
 # TODO UNCOMMENT
 comedy_series_type = type(comedy_series)
 
-# print(f"\n2.1 comedy_series type (id={id(comedy_series)}) = {comedy_series_type}")
+print(f"\n2.1 comedy_series type (id={id(comedy_series)}) = {comedy_series_type}")
 
 # TODO UNCOMMENT
-# comedy_series_len = len(comedy_series)
+comedy_series_len = len(comedy_series)
 
-# print(f"\n2.1 comedy_series length (id={id(comedy_series)}) = {comedy_series_len}")
+print(f"\n2.1 comedy_series length (id={id(comedy_series)}) = {comedy_series_len}")
 
 # UNCOMMENT: Immutability check
 # comedy_series[0] = 'm' # TypeError: 'str' object does not support item assignment
 
-comedy_series = None # string concatenation (new object)
+comedy_series = comedy_series + "'s Flying Circus" # string concatenation (new object)
 
-# print(f"\n1.1 comedy_series (id={id(comedy_series)}) = {comedy_series}")
+print(f"\n2.1 comedy_series (id={id(comedy_series)}) = {comedy_series}")
 
 
-# 1.2 LIST BASICS
+# 2.2 LIST BASICS
 
 pythons = [
     'Graham Chapman',
@@ -36,30 +36,30 @@ pythons = [
     ]
 
 
-# print(f"\n2.2 pythons (id={id(pythons)}) = {pythons}")
+print(f"\n2.2 pythons (id={id(pythons)}) = {pythons}")
 
 pythons_type = type(pythons)
 
-# print(f"\n2.2 pythons type (id={id(pythons)}) = {pythons_type}")
+print(f"\n2.2 pythons type (id={id(pythons)}) = {pythons_type}")
 
 pythons_len = len(pythons)
 
-# print(f"\n2.2 pythons len (id={id(pythons)}) = {pythons_len}")
+print(f"\n2.2 pythons len (id={id(pythons)}) = {pythons_len}")
 
 # In-place list method calls mutate the list.
 
 # TODO UNCOMMENT
-# pythons.append('Terry Gilliam')
+pythons.append('Terry Gilliam')
 # pythons.insert(-1, 'Terry Gilliam')
 # pythons.extend(['Terry Gilliam'])
 
-# print(f"\n2.2 pythons (id={id(pythons)}) = {pythons}")
+print(f"\n2.2 pythons (id={id(pythons)}) = {pythons}")
 
 # Gotcha: list concatenation returns a new list
 # TODO UNCOMMENT
-# pythons = pythons + ['Neil Innes'] # list concatenation (new list)
+pythons = pythons + ['Neil Innes'] # list concatenation (new list)
 
-# print(f"\n2.2 pythons (id={id(pythons)}) = {pythons}") # new identity
+print(f"\n2.2 pythons (id={id(pythons)}) = {pythons}") # new identity
 
 
 # 3.0 INDEX OPERATOR
@@ -67,17 +67,17 @@ pythons_len = len(pythons)
 ### 3.1 Index position (string)
 
 name = 'Monty Python'
-letter = None # first letter (zero-based index)
+letter = name[0] # first letter (zero-based index)
 
-# print(f"\n3.1 Letter = {letter}")
+print(f"\n3.1 Letter = {letter}")
 
-letter = None
+letter = name[4]
 
-# print(f"\n3.1 Letter = {letter}")
+print(f"\n3.1 Letter = {letter}")
 
-letter = None
+letter = name[-1]
 
-# print(f"\n3.1 Letter = {letter}")
+print(f"\n3.1 Letter = {letter}")
 
 
 ### 3.2 Index operator (list)
@@ -95,13 +95,13 @@ menu = [
     'Lobster Thermidor aux crevettes with a Mornay sauce, garnished with truffle pâté, brandy and a fried egg on top and Spam'
     ]
 
-menu_item = None # second element (zero-based index)
+menu_item = menu[1] # second element (zero-based index)
 
-# print(f"\n3.2 Menu item = {menu_item}")
+print(f"\n3.2 Menu item = {menu_item}")
 
-menu_item = None
+menu_item = menu[9]
 
-# print(f"\n3.2 Menu item = {menu_item}")
+print(f"\n3.2 Menu item = {menu_item}")
 
 # TODO UNCOMMENT
 # menu_item = menu[10] # IndexError: list index out of range#
@@ -127,54 +127,54 @@ cast = [
 # 4.1 slice from index 0 to index n (stride = 1)
 
 # Return Mr and Mrs Bun
-cast_members = None
+cast_members = cast[1:3]
 
-# print(f"\n4.1 The Buns = {cast_members}")
+print(f"\n4.1 The Buns = {cast_members}")
 
 # Return Mr and Mrs Bun (negative slice)
-cast_members = None
+cast_members = cast[-11:-9]
 
-# print(f"\n4.1 The Buns (negative slice) = {cast_members}")
+print(f"\n4.1 The Buns (negative slice) = {cast_members}")
 
 
 # 4.2 slice from index 0 to index n (stride = 1)
-cast_members = None # or cast[0:5]
+cast_members = cast[:5] # or cast[0:5]
 
-# print(f"\n4.2 Named cast members = {cast_members}")
+print(f"\n4.2 Named cast members = {cast_members}")
 
 
 # 4.3 slice from index -n to end of list inclusive (stride = 1)
-cast_members = None # warn: not the same as cast[-7:-1]
+cast_members = cast[-7:] # warn: not the same as cast[-7:-1]
 
-# print(f"\n4.3 Extras = {cast_members}")
+print(f"\n4.3 Extras = {cast_members}")
 
 
 # 4.4 slice with a specified stride
 
 # Return cast members in reverse order
-cast_members = None
+cast_members = cast[::-1]
 
-# print(f"\n4.4 Cast members reverse order = {cast_members}")
+print(f"\n4.4 Cast members reverse order = {cast_members}")
 
 # Return every other cast member starting from the first element
-cast_members = None
+cast_members = cast[0::2]
 
-# print(f"\n4.4 Every other cast member = {cast_members}")
+print(f"\n4.4 Every other cast member = {cast_members}")
 
 # Return every other cast member starting from the last element (negative stride)
-cast_members = None # reverse
+cast_members = cast[::-2] # reverse
 
-# print(f"\n4.4 Every other cast member (negative stride) = {cast_members}")
+print(f"\n4.4 Every other cast member (negative stride) = {cast_members}")
 
 # Return every other Viking starting with Viking 01.
-cast_members = None
+cast_members = cast[5::2]
 
-# print(f"\n4.4 Every other Viking = {cast_members}")
+print(f"\n4.4 Every other Viking = {cast_members}")
 
 # Return every other Viking starting with Viking 01 in reverse order.
-cast_members = None # Fails: empty list returned
+cast_members = cast[5:11:-2] # Fails: empty list returned
 
-# print(f"\n4.4 Every other Viking reverse order = {cast_members}")
+print(f"\n4.4 Every other Viking reverse order = {cast_members}")
 
 # Workaround
 cast_members = None # slice with default stride
@@ -198,9 +198,9 @@ mounties = [
 # 4.5.1 Replace part of a list (length unchanged)
 
 # TODO UNCOMMENT
-# cast[?] = mounties[?] # replace Vikings with Mounties
+cast[5:11] = mounties[0:] # replace Vikings with Mounties
 
-# print(f"\n4.5.1 Replace Vikings with Canadian Mounties = {cast}")
+print(f"\n4.5.1 Replace Vikings with Canadian Mounties = {cast}")
 
 # 4.5.2 Replace part of a list (length changes)
 # TODO UNCOMMENT
