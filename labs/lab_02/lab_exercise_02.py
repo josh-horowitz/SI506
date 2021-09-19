@@ -9,7 +9,7 @@ company_stocks = companies.replace(",",":")
 
 # PROBLEM 2 (4 points)
 
-automotive_stocks = company_stocks.split(";")
+automotive_stocks = company_stocks.split("; ")
 
 # PROBLEM 3 (4 points)
 
