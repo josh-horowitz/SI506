@@ -21,27 +21,35 @@ elec_vehicles = [
 
 # 2.0 CREATE LIST OF TESLA VEHICLES
 tesla_vehicles = []
+tesla_vehicles.append(elec_vehicles[5])
+tesla_vehicles.append(elec_vehicles[-1])
 
 # TODO Append Tesla vehicles
 
 # TODO Uncomment
-# print(f"\n2.0 Tesla vehicles (n={len(elec_vehicles)}) = {tesla_vehicles}")
+print(f"\n2.0 Tesla vehicles (n={len(elec_vehicles)}) = {tesla_vehicles}")
 
 
 # 2.1 FOR LOOP
 
 # TODO Uncomment
-# print(f"\n2.1 elec_vehicles (loop)")
+print(f"\n2.1 elec_vehicles (loop)")
 
 # TODO Implement "Electric vehicles" loop; print each vehicle
 
+for vehicle in elec_vehicles:
+    print(vehicle)
 
 # 2.2 IF STATEMENT
 
 # TODO Uncomment
-# print(f"\n2.2.1 Volo vehicles")
+print(f"\n2.2.1 Volo vehicles")
 
 # Find "volvo" string
+
+for vehicle in elec_vehicles:
+    if vehicle.lower().find('volvo'):
+        print(vehicle)
 
 # TODO implement "Volvo" loop
 
@@ -51,8 +59,10 @@ tesla_vehicles = [] # accumulator
 # TODO implement "Tesla" loop
 
 # TODO Uncomment
-# print(f"\n2.2.2 Tesla vehicles (loop) = {tesla_vehicles}")
-
+print(f"\n2.2.2 Tesla vehicles (loop) = {tesla_vehicles}")
+for vehicle in elec_vehicles:
+    if vehicle.lower().startswith('tesla'):
+        tesla_vehicles.append(vehicle)
 
 # 3.0 THE ACCUMULATOR PATTERN
 
