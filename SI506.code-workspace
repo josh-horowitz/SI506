@@ -3,6 +3,10 @@
 		{
 			"name": "SI506",
 			"path": "."
+		},
+		{
+			"name": "SI506-practice",
+			"path": "SI506-practice"
 		}
 	],
 	"settings": {}

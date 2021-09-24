@@ -48,7 +48,7 @@ print(f"\n2.2.1 Volo vehicles")
 # Find "volvo" string
 
 for vehicle in elec_vehicles:
-    if vehicle.lower().find('volvo'):
+    if vehicle.lower().find('volvo') > -1:
         print(vehicle)
 
 # TODO implement "Volvo" loop
@@ -63,6 +63,8 @@ print(f"\n2.2.2 Tesla vehicles (loop) = {tesla_vehicles}")
 for vehicle in elec_vehicles:
     if vehicle.lower().startswith('tesla'):
         tesla_vehicles.append(vehicle)
+
+print(tesla_vehicles)
 
 # 3.0 THE ACCUMULATOR PATTERN
 
@@ -86,16 +88,30 @@ num = 0
 
 # TODO Implement "max range" loop
 
+for vehicle in elec_vehicles:
+    if vehicle[-1] > num:
+        vehicle_max_range = vehicle
+        num = vehicle[-1]
+
 # TODO Uncomment
-# print(f"\n3.0 Max range (max={num} mi) = {vehicle_max_range}")
+print(f"\n3.0 Max range (max={num} mi) = {vehicle_max_range}")
 
 
 # 3.1 CHALLENGE
 
 # TODO Implement accumulator pattern
 
+vehicle_min_range = None
+# num = vehicle_max_range
+num = float('inf')
+
+for vehicle in elec_vehicles:
+    if vehicle[-1] < num:
+        vehicle_min_range = vehicle
+        num = vehicle[-1]
+
 # TODO Uncomment
-# print(f"\n3.1 Challenge: min range (min={num} mi) = {vehicle_min_range}")
+print(f"\n3.1 Challenge: min range (min={num} mi) = {vehicle_min_range}")
 
 
 # 4.0 LOOPING AND SLICING
@@ -121,8 +137,12 @@ vehicles_range = [] # accumulator
 
 # TODO Implement loop
 
+for vehicle in elec_vehicles[1:]:
+    if vehicle[headers.index('range')] > 250:
+        vehicles_range.append(vehicle)
+
 # TODO Uncomment
-# print(f"\n4.0 Accumulator pattern (range > 250 mi) = {vehicles_range}")
+print(f"\n4.0 Accumulator pattern (range > 250 mi) = {vehicles_range}")
 
 
 # 5.0 COUNTING
@@ -131,17 +151,25 @@ volvo_count = 0
 
 # TODO Implement "Volvo Group" loop
 
+for vehicle in elec_vehicles[1:]:
+    if vehicle[headers.index('automaker')] == 'Volvo Group':
+        volvo_count += 1
+
 # TODO Uncomment
-# print(f"\n5.0 Volvo count = {volvo_count}")
+print(f"\n5.0 Volvo count = {volvo_count}")
 
 
 # 5.1 CHALLENGE COUNTING
 
 # TODO Implement
+mpg_count = 0
 
+for vehicle in elec_vehicles[1:]:
+    if vehicle[headers.index('highway_08_mpg')] > 100:
+        mpg_count += 1
 
 # TODO Uncomment
-# print(f"\n5.1 Challenge mpg > 100 mi = {mpg_count}")
+print(f"\n5.1 Challenge mpg > 100 mi = {mpg_count}")
 
 
 # 6.0 IF-ELSE
@@ -151,9 +179,15 @@ long_charge = []
 
 # TODO Implement loop
 
+for vehicle in elec_vehicles[1:]:
+    if vehicle[-1] < 8:
+        short_charge.append(vehicle)
+    else:
+        long_charge.append(vehicle)
+
 # TODO Uncomment
-# print(f"\n6.0.1 short charge = {short_charge}")
-# print(f"\n6.0.2 long charge = {long_charge}")
+print(f"\n6.0.1 short charge = {short_charge}")
+print(f"\n6.0.2 long charge = {long_charge}")
 
 
 # 7.0 IF-ELIF-ELSE
@@ -164,7 +198,16 @@ range_city_low = [] # 0 - 149 mpg (city)
 
 # TODO Implement loop
 
+for vehicle in elec_vehicles[1:]:
+    if vehicle[headers.index('range_city')] < 150:
+        range_city_low.append(vehicle)
+    elif vehicle[headers.index('range_city')] < 300:
+        range_city_med.append(vehicle)
+    else:
+        range_city_high.append(vehicle)
+
+
 # TODO Uncomment
-# print(f"\n7.0.1 range city high = {range_city_high}")
-# print(f"\n7.0.2 range city medium = {range_city_med}")
-# print(f"\n7.0.3 range city low = {range_city_low}")
+print(f"\n7.0.1 range city high = {range_city_high}")
+print(f"\n7.0.2 range city medium = {range_city_med}")
+print(f"\n7.0.3 range city low = {range_city_low}")
