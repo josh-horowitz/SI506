@@ -147,3 +147,5 @@ for i in range(10):
         sal_great.append(sal_lists[i])
     else:
         sal_too_low.append(sal_lists[i])
+
+#to push to git
