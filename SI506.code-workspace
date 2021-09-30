@@ -5,8 +5,7 @@
 			"path": "."
 		},
 		{
-			"name": "SI506-practice",
-			"path": "SI506-practice"
+			"path": "../SI506-practice-master/problem_sets"
 		}
 	],
 	"settings": {}
