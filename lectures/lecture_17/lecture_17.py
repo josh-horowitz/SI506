@@ -74,79 +74,79 @@ def main():
 
     # 2.1 SWAPI: RETURN DICT OF AVAILABLE RESOURCES (n=6)
     # /api/
-    response = None # TODO call requests; note trailing slash
-    resources = None # TODO convert message payload to dict
+    response = requests.get(endpoint + '/') # TODO call requests; note trailing slash
+    resources = response.json() # TODO convert message payload to dict
 
     # TODO Uncomment
-    # print(f"\n2.1 SWAPI Resources (n={len(resources)})")
-    # for key, val in resources.items():
-    #     print(f"{key.capitalize()}: {val}")
+    print(f"\n2.1 SWAPI Resources (n={len(resources)})")
+    for key, val in resources.items():
+        print(f"{key.capitalize()}: {val}")
 
     # Write to file
     # TODO Uncomment
-    # output_path = 'swapi_resources.json'
-    # write_json(output_path, resources)
+    output_path = 'swapi_resources.json'
+    write_json(output_path, resources)
 
 
     # 2.2 SWAPI: REQUEST RESOURCES BY CATEGORY (PAGED RESPONSE n=10 records)
     # /api/:category/
 
     url = f"{endpoint}/people/"
-    response = None # TODO Call requests
+    response = requests.get(url) # TODO Call requests
 
-    payload = None # TODO decode
-    payload_count = None # TODO get resource count
-    people_returned = None # TODO get results length; SWAPI only returns max 10 records per request
-    people = None # TODO get people
-
-    # TODO Uncomment
-    # print(f"\n2.2: Payload count = {payload_count}; People returned = {people_returned}\n")
+    payload = response.json() # TODO decode
+    payload_count = payload['count'] # TODO get resource count
+    people_returned = len(payload['results']) # TODO get results length; SWAPI only returns max 10 records per request
+    people = payload['results'] # TODO get people
 
     # TODO Uncomment
-    # print(f"\n2.2: People returned (names only)")
-    # for person in people:
-    #     print(person['name'])
+    print(f"\n2.2: Payload count = {payload_count}; People returned = {people_returned}\n")
+
+    # TODO Uncomment
+    print(f"\n2.2: People returned (names only)")
+    for person in people:
+        print(person['name'])
 
     # Write to file
     # TODO Uncomment
-    # output_path = 'swapi_people_page_01.json'
-    # write_json(output_path, people)
+    output_path = 'swapi_people_page_01.json'
+    write_json(output_path, people)
 
 
     # 2.3 SWAPI: REQUEST SINGLE RESOURCE BY ID
     # /api/:category/:id/
 
     url = f"{endpoint}/people/1/" # Luke Skywalker
-    response = None # TODO Call requests and retrieve JSON representation of person returned
-    person = None # TODO decode to dict
+    response = requests.get(url) # TODO Call requests and retrieve JSON representation of person returned
+    person = response.json() # TODO decode to dict
 
     # TODO Uncomment
-    # print(f"\n2.3: Request person by id = {person}")
+    print(f"\n2.3: Request person by id = {person}")
 
     # Write to file
     # TODO Uncomment
-    # output_path = 'swapi_luke_skywalker.json'
-    # write_json(output_path, person)
+    output_path = 'swapi_luke_skywalker.json'
+    write_json(output_path, person)
 
 
     # 2.4 SWAPI: SEARCH CATEGORY FOR RESOURCE(S)
     # /api/:category/?search=<search term>
 
     url = f"{endpoint}/starships/"
-    params = None # TODO Create params dict
-    response = None # TODO call requests
+    params = {'search': 'wing'} # TODO Create params dict
+    response = requests.get(url, params) # TODO call requests
 
     # Uncomment
-    # payload = response.json() # decode
-    # starships = payload['results']
+    payload = response.json() # decode
+    starships = payload['results']
 
     # TODO Uncomment
-    # print(f"\n2.4: Search Starships ('wing') = {starships[0]}") # first element only
+    print(f"\n2.4: Search Starships ('wing') = {starships[0]}") # first element only
 
     # Write to file
     # TODO Uncomment
-    # output_path = 'swapi_starships_wing.json'
-    # write_json(output_path, starships)
+    output_path = 'swapi_starships_wing.json'
+    write_json(output_path, starships)
 
 
     # 2.5 SWAPI: REQUEST FUNCTION/METHOD CHAINING
@@ -154,75 +154,75 @@ def main():
     # Get the Empire Strikes Back (1980)
     url = f"{endpoint}/films/"
     params = {'search': 'empire strikes back'}
-    payload = None # TODO call requests.get(), response.json() method chaining
-    film = None # TODO retrieve first element in results
+    payload = requests.get(url, params).json() # TODO call requests.get(), response.json() method chaining
+    film = payload['results'][0] # TODO retrieve first element in results
 
     # TODO Uncomment
-    # print(f"\n2.5: Film = {film['title']} ({film['release_date']})")
+    print(f"\n2.5: Film = {film['title']} ({film['release_date']})")
 
     # Write to file
     # TODO Uncomment
-    # output_path = 'swapi_film_empire.json'
-    # write_json(output_path, film)
+    output_path = 'swapi_film_empire.json'
+    write_json(output_path, film)
 
     # Get Yoda
     url = f"{endpoint}/people/"
     params = {'search': 'yoda'}
-    yoda = None # TODO chain all whoa
+    yoda = requests.get(url, params).json()['results'][0] # TODO chain all whoa
 
     # TODO Uncomment
-    # print(f"\n2.5: Yoda = {yoda}")
+    print(f"\n2.5: Yoda = {yoda}")
 
     # Write to file
     # TODO Uncomment
-    # output_path = 'swapi_yoda.json'
-    # write_json(output_path, yoda)
+    output_path = 'swapi_yoda.json'
+    write_json(output_path, yoda)
 
 
     # 2.6 Additional Response properties
 
     # TODO Uncomment all of 2.6
 
-    # url = f"{endpoint}/people/"
-    # params = {'search': 'chewbacca'}
-    # response = requests.get(url, params)
+    url = f"{endpoint}/people/"
+    params = {'search': 'chewbacca'}
+    response = requests.get(url, params)
 
     # # Status code
-    # print(f"\n2.6 Response status code = {response.status_code}")
+    print(f"\n2.6 Response status code = {response.status_code}")
 
     # # Response headers
-    # print(f"\n2.6 Response headers = {response.headers}")
+    print(f"\n2.6 Response headers = {response.headers}")
 
     # # Encoding
-    # print(f"\n2.6 Response encoding = {response.encoding}")
+    print(f"\n2.6 Response encoding = {response.encoding}")
 
     # # Check for bad request
-    # if response.raise_for_status():
-    #     print(f"\n2.6 Bad request")
-    # else:
-    #     print(f"\n2.6 Valid request")
+    if response.raise_for_status():
+        print(f"\n2.6 Bad request")
+    else:
+        print(f"\n2.6 Valid request")
 
     # # Decode response
-    # name = response.json()['results'][0]['name']
-    # print(f"\n2.6 Resource name = {name}")
+    name = response.json()['results'][0]['name']
+    print(f"\n2.6 Resource name = {name}")
 
 
     # 3.0 UTILITY FUNCTIONS
 
     # Search and retrieve the astromech droid R2-D2
     url = f"{endpoint}/people"
-    params = None # TODO add params
+    params = {'search':'r2-d2'} # TODO add params
 
     # Call function, pass args
-    r2_d2 = None # TODO call get_swapi_resource; chain accessing first element in results
+    r2_d2 = get_swapi_resource(url, params) # TODO call get_swapi_resource; chain accessing first element in results
 
     # TODO Uncomment
-    # print(f"\n3.0 R2-D2 = {r2_d2}\n")
+    print(f"\n3.0 R2-D2 = {r2_d2}\n")
 
     # Write to file
     # TODO Uncomment
-    # output_path = 'swapi_r2d_d2.json'
-    # write_json(output_path, r2_d2)
+    output_path = 'swapi_r2d_d2.json'
+    write_json(output_path, r2_d2)
 
 
 if __name__ == '__main__':
