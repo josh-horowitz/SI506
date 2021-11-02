@@ -167,7 +167,7 @@ def has_one_cup_two_pieces(menu, order):
         return False
 
 print(f"E.g. Testing with ['shumai', 'longjing']: {has_one_cup_two_pieces(menu, ['shumai', 'longjing'])} (should be False)")
-print(f"E.g. Testing with ['shumai', 'longjing', 'longjing', 'custard bun']: {has_one_cup_two_pieces(menu, ['shumai', 'longjing', 'longjing', 'custard bun'])} (should be True)")
+print(f"E.g. Testing with ['shumai', 'longjing', 'veggies', 'custard bun']: {has_one_cup_two_pieces(menu, ['shumai', 'longjing', 'veggies', 'custard bun'])} (should be True)")
 
 print("\n\nProblem 6.2\n\n")
 

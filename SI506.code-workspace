@@ -8,5 +8,7 @@
 			"path": "../SI506-practice-master/problem_sets"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
 }
