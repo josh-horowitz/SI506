@@ -1,0 +1,86 @@
+[
+  {
+    "franchise": "Star Wars",
+    "title": "The Empire Strikes Back",
+    "episode_id": 5,
+    "release_date": "1980-05-17",
+    "audience_rating": {
+      "title": "Star Wars: Episode V -- The Empire Strikes Back",
+      "positive_rating": 0.97,
+      "five_star_avg_rating": 4.6,
+      "num_ratings": 250000
+    }
+  },
+  {
+    "franchise": "Star Wars",
+    "title": "A New Hope",
+    "episode_id": 4,
+    "release_date": "1977-05-25",
+    "audience_rating": {
+      "title": "Star Wars: Episode IV -- A New Hope",
+      "positive_rating": 0.96,
+      "five_star_avg_rating": 4.6,
+      "num_ratings": 250000
+    }
+  },
+  {
+    "franchise": "Star Wars",
+    "title": "Return of the Jedi",
+    "episode_id": 6,
+    "release_date": "1983-05-25",
+    "audience_rating": {
+      "title": "Star Wars: Episode VI -- Return of the Jedi",
+      "positive_rating": 0.94,
+      "five_star_avg_rating": 4.4,
+      "num_ratings": 250000
+    }
+  },
+  {
+    "franchise": "Star Wars",
+    "title": "The Force Awakens",
+    "episode_id": 7,
+    "release_date": "2015-12-11",
+    "audience_rating": {
+      "title": "Star Wars: Episode VII -- The Force Awakens",
+      "positive_rating": 0.85,
+      "five_star_avg_rating": 4.2,
+      "num_ratings": 100000
+    }
+  },
+  {
+    "franchise": "Star Wars",
+    "title": "Revenge of the Sith",
+    "episode_id": 3,
+    "release_date": "2005-05-19",
+    "audience_rating": {
+      "title": "Star Wars: Episode III -- Revenge of the Sith",
+      "positive_rating": 0.66,
+      "five_star_avg_rating": 3.1,
+      "num_ratings": 250000
+    }
+  },
+  {
+    "franchise": "Star Wars",
+    "title": "The Phantom Menace",
+    "episode_id": 1,
+    "release_date": "1999-05-19",
+    "audience_rating": {
+      "title": "Star Wars: Episode I -- The Phantom Menace",
+      "positive_rating": 0.59,
+      "five_star_avg_rating": 3.5,
+      "num_ratings": 250000
+    }
+  },
+  {
+    "franchise": "Star Wars",
+    "title": "Attack of the Clones",
+    "episode_id": 2,
+    "release_date": "2002-05-16",
+    "audience_rating": {
+      "title": "Star Wars: Episode II -- Attack of the Clones",
+      "positive_rating": 0.56,
+      "five_star_avg_rating": 3.4,
+      "num_ratings": 250000
+    }
+  }
+]

@@ -1,0 +1,152 @@
+[
+    {
+        "title": "Star Wars: Episode I -- The Phantom Menace",
+        "year_released": 1999,
+        "length": "2h 13m",
+        "tomato_meter": {
+            "positive_review": 0.52,
+            "ten_star_avg_rating": 5.9,
+            "num_reviews": 233
+        },
+        "audience": {
+            "positive_rating": 0.59,
+            "five_star_avg_rating": 3.5,
+            "num_ratings": 250000
+        }
+    },
+    {
+        "title": "Star Wars: Episode II -- Attack of the Clones",
+        "year_released": 2002,
+        "length": "2h 23m",
+        "tomato_meter": {
+            "positive_review": 0.65,
+            "ten_star_avg_rating": 7.3,
+            "num_reviews": 302
+        },
+        "audience": {
+            "positive_rating": 0.56,
+            "five_star_avg_rating": 3.4,
+            "num_ratings": 250000
+        }
+    },
+    {
+        "title": "Star Wars: Episode III -- Revenge of the Sith",
+        "year_released": 2005,
+        "length": "2h 20m",
+        "tomato_meter": {
+            "positive_review": 0.80,
+            "ten_star_avg_rating": 6.6,
+            "num_reviews": 252
+        },
+        "audience": {
+            "positive_rating": 0.66,
+            "five_star_avg_rating": 3.1,
+            "num_ratings": 250000
+        }
+    },
+    {
+        "title": "Star Wars: Episode IV -- A New Hope",
+        "year_released": 1977,
+        "length": "2h 1m",
+        "tomato_meter": {
+            "positive_review": 0.92,
+            "ten_star_avg_rating": 8.8,
+            "num_reviews": 132
+        },
+        "audience": {
+            "positive_rating": 0.96,
+            "five_star_avg_rating": 4.6,
+            "num_ratings": 250000
+        }
+    },
+    {
+        "title": "Star Wars: Episode V -- The Empire Strikes Back",
+        "year_released": 1980,
+        "length": "2h 4m",
+        "tomato_meter": {
+            "positive_review": 0.94,
+            "ten_star_avg_rating": 8.9,
+            "num_reviews": 105
+        },
+        "audience": {
+            "positive_rating": 0.97,
+            "five_star_avg_rating": 4.6,
+            "num_ratings": 250000
+        }
+    },
+    {
+        "title": "Star Wars: Episode VI -- Return of the Jedi",
+        "year_released": 1983,
+        "length": "2h 13m",
+        "tomato_meter": {
+            "positive_review": 0.82,
+            "ten_star_avg_rating": 7.2,
+            "num_reviews": 96
+        },
+        "audience": {
+            "positive_rating": 0.94,
+            "five_star_avg_rating": 4.4,
+            "num_ratings": 250000
+        }
+    },
+    {
+        "title": "Star Wars: Episode VII -- The Force Awakens",
+        "year_released": 2015,
+        "length": "2h 16m",
+        "tomato_meter": {
+            "positive_review": 0.93,
+            "ten_star_avg_rating": 8.3,
+            "num_reviews": 445
+        },
+        "audience": {
+            "positive_rating": 0.85,
+            "five_star_avg_rating": 4.2,
+            "num_ratings": 100000
+        }
+    },
+    {
+        "title": "Star Wars: Episode VIII -- The Last Jedi",
+        "year_released": 2017,
+        "length": "2h 32m",
+        "tomato_meter": {
+            "positive_review": 0.91,
+            "ten_star_avg_rating": 8.1,
+            "num_reviews": 482
+        },
+        "audience": {
+            "positive_rating": 0.42,
+            "five_star_avg_rating": 2.6,
+            "num_ratings": 100000
+        }
+    },
+    {
+        "title": "Star Wars: Episode IX -- The Rise of Skywalker",
+        "year_released": 2019,
+        "length": "2h 16m",
+        "tomato_meter": {
+            "positive_review": 0.52,
+            "ten_star_avg_rating": 6.1,
+            "num_reviews": 512
+        },
+        "audience": {
+            "positive_rating": 0.86,
+            "five_star_avg_rating": 4.3,
+            "num_ratings": 50000
+        }
+    },
+    {
+        "title": "Rogue One: A Star Wars Story",
+        "year_released": 2016,
+        "length": "2h 14m",
+        "tomato_meter": {
+            "positive_review": 0.84,
+            "ten_star_avg_rating": 7.5,
+            "num_reviews": 456
+        },
+        "audience": {
+            "positive_rating": 0.86,
+            "five_star_avg_rating": 4.1,
+            "num_ratings": 100000
+        }
+    }
+]
