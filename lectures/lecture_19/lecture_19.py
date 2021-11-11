@@ -31,12 +31,15 @@ class Person:
            Person: person instance
         """
 
-        pass # TODO Implement
+        self.url = url
+        self.name = name
+        self.birth_year = birth_year
+        self.force_sensitive = force_sensitive
 
     def __str__(self):
         """Return a string representation of the object."""
 
-        pass # TODO implement
+        return self.name
 
 
     def get_age(self, current_era, current_year):
@@ -88,7 +91,12 @@ class Person:
             dict: dictionary of the object's instance variables
         """
 
-        pass # TODO implment
+        return {
+                'url': self.url,
+                'name': self.name,
+                'birth_year': self.birth_year,
+                'force_sensitive': self.force_sensitive
+            }
 
 
 class Planet:
@@ -221,43 +229,54 @@ def main():
     # 3.0 CLASS INSTANTIATION
 
     # Get Yoda data
-    swapi_yoda = None # TODO Get Yoda representation from SWAPI
+    swapi_yoda = get_swapi_resource(f"{endpoint}/people/", {'search': 'yoda'})['results'][0] # TODO Get Yoda representation from SWAPI
 
     # Instantiate Person
-    yoda = None # TODO instantiate Person object
+    yoda = Person(
+        swapi_yoda['url'],
+        swapi_yoda['name'],
+        swapi_yoda['birth_year'],
+        force_sensitive=True
+    )
 
     # TODO uncomment
-    # print(f"\nYoda instance = {yoda}") # reads yoda.__str__
+    print(f"\nYoda instance = {yoda}") # reads yoda.__str__
 
     # Get first 10 people from SWAPI
     people = []
-    swapi_people = None # Get first 10 people records from SWAPI
+    swapi_people = get_swapi_resource(f'{endpoint}/people/')['results'] # Get first 10 people records from SWAPI
 
     # Append Person instances to list
 
-    # TODO Implement loop
+    for person in swapi_people:
+        append_person = Person(
+            person['url'],
+            person['name'],
+            person['birth_year']
+        )
+        people.append(append_person)
 
     # TODO Uncomment
-    # print(f"\n3.1 People (obj identifiers)\n{people}") # list of opaque object identifiers printed to screen
+    print(f"\n3.1 People (obj identifiers)\n{people}") # list of opaque object identifiers printed to screen
 
 
     # 4.0 DUNDER __STR__
 
     # TODO Uncomment
-    # print(f"\n4.0 Person instance human-friendly (str) = {yoda}")
+    print(f"\n4.0 Person instance human-friendly (str) = {yoda}")
 
-    # print(f"\n4.0 People instances human-friendly (str)\n")
-    # for person in people:
-    #     print(person) # person.__str__ printed
+    print(f"\n4.0 People instances human-friendly (str)\n")
+    for person in people:
+        print(person) # person.__str__ printed
 
 
     # 5.0 ACCESS INSTANCE VARIABLE VALUES
 
-    birth_year = None # TODO get value
-    is_force_sensitive = None # TODO get value
+    birth_year = yoda.birth_year # TODO get value
+    is_force_sensitive = yoda.force_sensitive # TODO get value
 
-    # print(f"\n5.0 Yoda's birth year = {birth_year}")
-    # print(f"\n5.0 Yoda Force-sensitive? = {is_force_sensitive}")
+    print(f"\n5.0 Yoda's birth year = {birth_year}")
+    print(f"\n5.0 Yoda Force-sensitive? = {is_force_sensitive}")
 
 
     # 6.0 INSTANCE METHODS (GET_AGE)
