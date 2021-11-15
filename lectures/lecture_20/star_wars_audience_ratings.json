@@ -1,0 +1,11 @@
+{
+  "title": "A New Hope",
+  "episode_id": 4,
+  "release_date": "1977-05-25",
+  "audience_rating": {
+    "title": "Star Wars: Episode IV -- A New Hope",
+    "positive_rating": 0.96,
+    "five_star_avg_rating": 4.6,
+    "num_ratings": 250000
+  }
+}

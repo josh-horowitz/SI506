@@ -7,15 +7,18 @@ class Film:
 
     franchise = 'Star Wars' # class variable
 
-    def __init__(self):
+    def __init__(self, title, episode_id, release_date):
         """TODO"""
 
-        pass # TODO Implement (including parameter list)
+        self.title = title
+        self.episode_id = episode_id
+        self.release_date = release_date
+        self.audience_rating = None
 
     def __str__(self):
         """TODO"""
 
-        pass # TODO Implement
+        return (f'{Film.franchise}: {self.title} (Episode {self.episode_id})')
 
     def get_audience_positive_rating(self):
         """TODO"""
@@ -24,8 +27,20 @@ class Film:
 
     def jsonable(self):
         """TODO"""
-
-        pass # TODO Implement
+        if self.audience_rating:
+            return{
+                'title': self.title,
+                'episode_id': self.episode_id,
+                'release_date': self.release_date,
+                'audience_rating': self.audience_rating.jsonable()
+            }
+        else:
+            return{
+                'title': self.title,
+                'episode_id': self.episode_id,
+                'release_date': self.release_date,
+                'audience_rating': self.audience_rating.jsonable()
+            }
 
 
 class AudienceRating:
@@ -122,27 +137,32 @@ def main():
     # CHALLENGE 02
 
     # Get films (read file instead - quicker)
-    films_data = None # TODO read file
+    films_data = read_json('swapi_films.json') # TODO read file
 
     films = {}
 
     # TODO Implement loop
-
+    for film in films_data:
+        films[film['title']] = Film(film['title'], film['episode_id'], film['release_date'])
     # TODO Uncomment
-    # print(f"\nChallenge 02: Films\n{films}")
+    print(f"\nChallenge 02: Films\n{films}")
 
 
     # CHALLENGE 03
 
     # Get ratings
-    ratings_data = None # TODO read file
+    ratings_data = read_json('rotten_tomatoes-star_wars.json') # TODO read file
 
     audience_ratings = {}
 
     # TODO Implement loop
-
+    for data in ratings_data:
+        audience_ratings[data['title']] = AudienceRating(data['title'],
+        data['audience']['positive_rating'],
+        data['audience']['five_star_avg_rating'],
+        data['audience']['num_ratings'])
     # TODO Uncomment
-    # print(f"\nAudience ratings\n{audience_ratings}")
+    print(f"\nAudience ratings\n{audience_ratings}")
 
 
     # CHALLENGE 04
@@ -150,18 +170,22 @@ def main():
     # Blend (add AudienceRating instances to each Film instance)
 
     # TODO Implement loop
-
+    for film in films.keys():
+        for rating in audience_ratings.values():
+            if film.lower() in rating.title.lower():
+                films[film].audience_rating = rating
     # Check
-    # write_json('star_wars_audience_ratings.json', films['A New Hope'].jsonable())
+    write_json('star_wars_audience_ratings.json', films['A New Hope'].jsonable())
 
     # JSON-friendly list
     writeable = []
 
     # TODO Implement loop
-
+    for film in films.values():
+        writeable.append(film.jsonable())
     # TODO Uncomment
     # Write to file
-    # write_json('films_ratings.json', writeable)
+    write_json('films_ratings.json', writeable)
 
 
     # CHALLENGE 05
